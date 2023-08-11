@@ -1,15 +1,17 @@
 import { Router } from "express";
-import {getLibros, createLibros, updateLibros, deleteLibros } from "../controllers/autor.controller.js"
+import { deleteAutor, getAutorByID, getAutores, insertAutor, updateAutores } from "../controllers/autor.controller.js";
+
 const router = Router(); // sirve para agrupar varias solicitudes de express HTTP, tienen los mismos metodos de express en el archivo index. Es para manetener las solicitudes mas ordenadas.
 
 
-router.get("/libros", getLibros);
+router.get("/autores", getAutores);
+router.get("/autores/:id", getAutorByID);
 
-router.post("/libros", createLibros);
+router.post("/autores", insertAutor);
 
-router.put("/libros", updateLibros );
+router.put("/autores", updateAutores );
 
-router.delete("/libros", deleteLibros );
+router.delete("/autores", deleteAutor  );
 
 
 export default router

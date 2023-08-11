@@ -5,7 +5,7 @@ export const pool = createPool({
     user: 'root',
     password: '1234',
     port: 3306,
-    database: 'autor_libro'
+    database: 'autor_novela'
 
 })
 
