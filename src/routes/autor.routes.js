@@ -5,13 +5,15 @@ const router = Router(); // sirve para agrupar varias solicitudes de express HTT
 
 
 router.get("/autores", getAutores);
-router.get("/autores/:id", getAutorByID);
+router.get("/autores/:id_autor", getAutorByID);
 
 router.post("/autores", insertAutor);
 
-router.put("/autores", updateAutores );
+router.put("/autores/:id_autor", updateAutores );
 
-router.delete("/autores", deleteAutor  );
+router.patch("/autores/:id_autor", updateAutores );
+
+router.delete("/autores/:id_autor", deleteAutor  );
 
 
 export default router
