@@ -2,12 +2,22 @@ import { pool } from "../db.js";
 
 // GETTERS
 export const getAutores = async (req, res) => {
-  try {
+  pool.query("SELECT * FROM autor")
+  .then(result =>{
+    res.json(result)
+  })
+  .catch(error=> 
+    res.status(500).send(error))
+
+  /* EL SIGUIENTE CODIGO ES EQUIVALENTE AL DE ARRIBA.
+    try {
     const [result] = await pool.query("SELECT * FROM autor");
     res.json(result);
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
   }
+  */
+
 };
 
 export const getAutorByID = async (req, res) => {
